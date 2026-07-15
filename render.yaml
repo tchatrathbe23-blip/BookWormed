@@ -1,0 +1,17 @@
+services:
+  - type: web
+    name: bookwormd-backend
+    env: docker
+    dockerfilePath: backend/Dockerfile
+    plan: starter
+    envVars:
+      - key: PORT
+        value: 5000
+  - type: web
+    name: bookwormd-frontend
+    env: docker
+    dockerfilePath: frontend/Dockerfile
+    plan: starter
+    envVars:
+      - key: VITE_API_URL
+        value: https://your-backend-url
